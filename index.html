@@ -1,1 +1,186 @@
-Documentation coming soon...
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to github.tools’ documentation! &mdash; github.tools v0.1.0a1 documentation</title>
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0a1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="github.tools v0.1.0a1 documentation" href="" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="">github.tools v0.1.0a1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-github-tools-documentation">
+<h1>Welcome to github.tools&#8217; documentation!<a class="headerlink" href="#welcome-to-github-tools-documentation" title="Permalink to this headline">¶</a></h1>
+<p>PasteScript template, Paver tasks and Sphinx extension to setup a new package
+and easily host it on GitHub (including its documentation).</p>
+<p>Setting up a root branch for gh-pages and setting Sphinx html build directory as a repository
+is quite complex; especially since Sphinx put its source and static files
+in directories named &#8220;_static&#8221; and &#8220;_source&#8221; and that gh-pages doesn&#8217;t want to serve them.</p>
+<p>The Sphinx extension (github.tools.sphinx) corrects the last problem; some paver
+tasks (github.tools.task.*) take care of creation of a Git submodule to host
+the built html documentation; The PasteScript template create the basic layout and
+pavement.py script to get started.</p>
+<p>This extension requires git (tested with 1.6.2.4), a GitHub user account and
+python 2.5.</p>
+<div class="section" id="installation">
+<h2>Installation:<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Assuming easy_install is installed, simple execute...:</p>
+<div class="highlight-python"><pre>easy_install github.tools</pre>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage:<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>If you are starting from scratch, create the basic layout with paster:</p>
+<div class="highlight-python"><pre>paster create -t gh_package &lt;project name&gt;</pre>
+</div>
+<p>The project name will be used for pypi and for your Github repository
+(<a class="reference external" href="http://github.com">http://github.com</a>/&lt;user&gt;/&lt;project name&gt;). You can change it later
+in your __init__.py package.</p>
+<p>To finish your development environment setup, create a virtual environment
+and deploy your package in development mode:</p>
+<div class="highlight-python"><pre>cd &lt;project name&gt;
+python bootstrap.py --no-site-packages</pre>
+</div>
+<p>The basic package comes with a virtualenv boostrap script
+to create an  isolated Python environments. To activate this environment
+in your shell, run:</p>
+<div class="highlight-python"><pre>source ./virtual-env/bin/activate
+# or .\virtual-env\Scripts\activate.bat on windows</pre>
+</div>
+<p>Finally:</p>
+<div class="highlight-python"><pre>paver generate_setup minilib develop.</pre>
+</div>
+<p>Paver add a setup.py file to your package and a portable paver library
+(required by setup.py), and deploy your application in development mode; the src folder
+which contains your package is added to the python path.</p>
+<p>You are ready to write your package (in src/) and its ducomentation (in docs/source).
+You should probably start tracking your project now:</p>
+<div class="highlight-python"><pre>git init
+git add .
+git commit -m "initial import"</pre>
+</div>
+<p>When you are ready to share your work, you will need to
+create a repository at GitHub and push your local repository. Paver can do it for you.
+Paver will need your GitHub user name and token to create the repository. You can
+set them with the following command:</p>
+<div class="highlight-python"><pre>git config --global github.user &lt;user&gt;
+git config --global github.token &lt;token&gt;</pre>
+</div>
+<p>You can find your token on you Github account page.</p>
+<p>Then, to create the repository and upload your project:</p>
+<div class="highlight-python"><pre>paver gh_register</pre>
+</div>
+<p>Once the project is created, you can create your gh-pages branch and upload it to github:</p>
+<div class="highlight-python"><pre>paver gh_pages_create gh_html</pre>
+</div>
+<p>Paver will create a submodule of your project at docs/build/html,
+create a gh-pages root branch and push the branch to your project.
+It then build the html doc. To clean the html build folder, it update the submodule
+(you will lose any uncommitted and push changes), remove every files and directory
+(except ,git/) and rebuild the documentation. It is your responsibility to push
+the new built and to update the submodule reference (a submodule point to specific
+commit on a remote repository, not to the HEAD of a specific branch).</p>
+<p>When your documentation can be published, simply push  gh-pages submodule to GitHub:</p>
+<div class="highlight-python"><pre>paver gh_pages_update -m "update docs with..."</pre>
+</div>
+<p>You might also want to update the submodule reference:</p>
+<div class="highlight-python"><pre>cd ../../../
+git add docs/build/html
+git commit -m "update gh-pages submodule"</pre>
+</div>
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference external" href="modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference external" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Welcome to github.tools&#8217; documentation!</a><ul>
+<li><a class="reference external" href="#installation">Installation:</a></li>
+<li><a class="reference external" href="#usage">Usage:</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference external" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="sources/index.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="">github.tools v0.1.0a1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Damien Lebrun.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+    </div>
+  </body>
+</html>
