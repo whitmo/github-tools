@@ -1,3 +1,5 @@
 # Sphinx inventory version 1
 # Project: github-tools
 # Version: 0.1
+github.tools.template mod template.html
+github.tools.template.GithubTemplate class template.html
