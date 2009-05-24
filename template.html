@@ -20,6 +20,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
     <link rel="top" title="github-tools v0.1.0a3 documentation" href="index.html" />
+    <link rel="next" title="Paver Task" href="task.html" />
     <link rel="prev" title="Welcome to github.tools’ documentation!" href="index.html" /> 
   </head>
   <body>
@@ -32,6 +33,9 @@
         <li class="right" >
           <a href="modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="task.html" title="Paver Task"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to github.tools’ documentation!"
              accesskey="P">previous</a> |</li>
@@ -46,7 +50,12 @@
             
   <div class="section" id="module-github.tools.template">
 <h1>PasteScript template<a class="headerlink" href="#module-github.tools.template" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<h2>Summary:<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>PasteScript Template to generate a GitHub hosted python package.</p>
+</div>
+<div class="section" id="description">
+<h2>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>Let you set the package name, a one line description, the Licence (support
 GPL, LGPL, AGPL and BSD - GPLv3 by default) and the author name, email and
 orginisation variables:</p>
@@ -99,8 +108,22 @@ is Sphinx configuration file. Check Sphinx documentation for more details.</p>
 <dt id="github.tools.template.GithubTemplate">
 <em class="property">
 class </em><tt class="descclassname">github.tools.template.</tt><tt class="descname">GithubTemplate</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#github.tools.template.GithubTemplate" title="Permalink to this definition">¶</a></dt>
-<dd>Paver template for a GitHub hosted Python package.</dd></dl>
+<dd><p>Paver template for a GitHub hosted Python package.</p>
+<dl class="method">
+<dt id="github.tools.template.GithubTemplate.pre">
+<tt class="descname">pre</tt><big>(</big><em>command</em>, <em>output_dir</em>, <em>vars</em><big>)</big><a class="headerlink" href="#github.tools.template.GithubTemplate.pre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set extra template variables:</p>
+<ul class="simple">
+<li>&#8220;year&#8221;, current year.</li>
+<li>&#8220;gitignore&#8221;, set to &#8220;.gitignore&#8221;.</li>
+<li>&#8220;licence_body&#8221;, licence notice of the package.</li>
+<li>&#8220;gpl_type&#8221;, for gpl licence (&#8216;&#8217;. &#8216;Lesser&#8217; or &#8216;Affero&#8217;)</li>
+</ul>
+</dd></dl>
 
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -109,9 +132,21 @@ class </em><tt class="descclassname">github.tools.template.</tt><tt class="descn
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">PasteScript template</a><ul>
+<li><a class="reference external" href="#summary">Summary:</a></li>
+<li><a class="reference external" href="#description">Description:</a></li>
+</ul>
+</li>
+</ul>
+
             <h4>Previous topic</h4>
             <p class="topless"><a href="index.html"
                                   title="previous chapter">Welcome to github.tools&#8217; documentation!</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="task.html"
+                                  title="next chapter">Paver Task</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="sources/template.txt"
@@ -143,6 +178,9 @@ class </em><tt class="descclassname">github.tools.template.</tt><tt class="descn
         <li class="right" >
           <a href="modindex.html" title="Global Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="task.html" title="Paver Task"
+             >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to github.tools’ documentation!"
              >previous</a> |</li>
