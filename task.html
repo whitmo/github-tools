@@ -50,12 +50,16 @@
             
   <div class="section" id="module-github.tools.task">
 <h1>Paver Task<a class="headerlink" href="#module-github.tools.task" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="summary">
-<h2>Summary:<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>Paver task to manage Python packages hosted at GitHub.</p>
-</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">Paver task to manage Python packages hosted at GitHub.</td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="configuration">
-<h2>Configuration:<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>These tasks use:</p>
 <blockquote>
 <ul class="simple">
@@ -70,6 +74,34 @@ your github repository remote name.</li>
 <li>options.gh_pages.master_branch, set by default to master.</li>
 </ul>
 </blockquote>
+<dl class="function">
+<dt id="github.tools.task.gh_register">
+<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_register</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_register" title="Permalink to this definition">¶</a></dt>
+<dd>Create a repository at GitHub and push it your local repository.</dd></dl>
+
+<dl class="function">
+<dt id="github.tools.task.gh_pages_create">
+<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_pages_create</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_pages_create" title="Permalink to this definition">¶</a></dt>
+<dd>Create a submodule to host your Sphinx documentation.</dd></dl>
+
+<dl class="function">
+<dt id="github.tools.task.gh_pages_update">
+<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_pages_update</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_pages_update" title="Permalink to this definition">¶</a></dt>
+<dd>Rebuild your documentation and push it to GitHub</dd></dl>
+
+<dl class="function">
+<dt id="github.tools.task.gh_doc_clean">
+<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_doc_clean</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_doc_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean your documentation.</p>
+<p>Update the submodule (every changes not committed and pushed will be lost),
+pull any changes and remove any file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="github.tools.task.gh_html">
+<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_html</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_html" title="Permalink to this definition">¶</a></dt>
+<dd>Build documentation.</dd></dl>
+
 </div>
 </div>
 
@@ -82,8 +114,7 @@ your github repository remote name.</li>
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference external" href="">Paver Task</a><ul>
-<li><a class="reference external" href="#summary">Summary:</a></li>
-<li><a class="reference external" href="#configuration">Configuration:</a></li>
+<li><a class="reference external" href="#configuration">Configuration</a></li>
 </ul>
 </li>
 </ul>
