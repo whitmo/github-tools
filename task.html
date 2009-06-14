@@ -5,13 +5,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Paver Task &mdash; github-tools v0.1.0a3 documentation</title>
+    <title>Paver Task &mdash; github-tools v0.1.1 documentation</title>
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.1.0a3',
+        VERSION:     '0.1.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="github-tools v0.1.0a3 documentation" href="index.html" />
+    <link rel="top" title="github-tools v0.1.1 documentation" href="index.html" />
     <link rel="next" title="Sphinx extension" href="sphinx.html" />
     <link rel="prev" title="PasteScript template" href="template.html" /> 
   </head>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="template.html" title="PasteScript template"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">github-tools v0.1.0a3 documentation</a> &raquo;</li> 
+        <li><a href="index.html">github-tools v0.1.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -62,18 +62,37 @@
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>These tasks use:</p>
 <blockquote>
-<ul class="simple">
-<li>options.setup.name, used for your GitHub repository name.</li>
-<li>options.setup.description, used for your GitHub repository description.</li>
-<li>options.sphinx.docroot, set by default to docs/.</li>
-<li>options.sphinx.build, set by default to &lt;options.sphinx.docroot&gt;/build.</li>
-<li>options.sphinx.source, set by default to &lt;options.sphinx.docroot&gt;/source.</li>
-<li>options.gh_pages.root, set by default to &lt;options.sphinx.docroot&gt;/build/html</li>
-<li>options.gh_pages.remote_name, set by default to origin and used for
-your github repository remote name.</li>
-<li>options.gh_pages.master_branch, set by default to master.</li>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options.setup.name</span></tt>, used for your GitHub repository name.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options.setup.description</span></tt>, used for your GitHub repository description.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options.sphinx.docroot</span></tt>, set by default to <tt class="docutils literal"><span class="pre">docs/</span></tt>.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options.sphinx.build</span></tt>, set by default to <tt class="docutils literal"><span class="pre">build</span></tt>.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options.sphinx.source</span></tt>, set by default to <tt class="docutils literal"><span class="pre">source</span></tt>.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options.gh_pages.root</span></tt>, local path to gh_pages root; set by default to
+<tt class="docutils literal"><span class="pre">&lt;options.sphinx.docroot&gt;</span></tt>/<tt class="docutils literal"><span class="pre">&lt;options.sphinx.build&gt;/html</span></tt></p>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">options.gh_pages.htlmroot</span></tt>, local path to the html output of your doc</dt>
+<dd><p class="first last">built;  set by default <tt class="docutils literal"><span class="pre">options.gh_pages.root</span></tt> (you might want to host 
+more than your Sphinx doc there).</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options.gh_pages.remote_name</span></tt>, set by default to <a href="#id1"><span class="problematic" id="id2">``</span></a>origin` and used for
+your github repository remote name.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">options.gh_pages.master_branch</span></tt>, set by default to <tt class="docutils literal"><span class="pre">master</span></tt>.</p>
+</li>
 </ul>
 </blockquote>
+<p><tt class="docutils literal"><span class="pre">options.gh_pages.root</span></tt> and <tt class="docutils literal"><span class="pre">options.gh_pages.htmlroot</span></tt> will only be of
+any used if you are using something else than Sphinx (and don&#8217;t want to use 
+Sphinx options).</p>
 <dl class="function">
 <dt id="github.tools.task.gh_register">
 <tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_register</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_register" title="Permalink to this definition">¶</a></dt>
@@ -82,25 +101,25 @@ your github repository remote name.</li>
 <dl class="function">
 <dt id="github.tools.task.gh_pages_create">
 <tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_pages_create</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_pages_create" title="Permalink to this definition">¶</a></dt>
-<dd>Create a submodule to host your Sphinx documentation.</dd></dl>
+<dd>Create a submodule to host your documentation.</dd></dl>
 
 <dl class="function">
 <dt id="github.tools.task.gh_pages_update">
 <tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_pages_update</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_pages_update" title="Permalink to this definition">¶</a></dt>
-<dd>Rebuild your documentation and push it to GitHub</dd></dl>
+<dd>Push your documentation it to GitHub.</dd></dl>
 
 <dl class="function">
-<dt id="github.tools.task.gh_doc_clean">
-<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_doc_clean</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_doc_clean" title="Permalink to this definition">¶</a></dt>
+<dt id="github.tools.task.gh_pages_clean">
+<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_pages_clean</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_pages_clean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clean your documentation.</p>
 <p>Update the submodule (every changes not committed and pushed will be lost),
-pull any changes and remove any file</p>
+pull any changes and remove any file in options.gh_pages.docroot.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="github.tools.task.gh_html">
-<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_html</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_html" title="Permalink to this definition">¶</a></dt>
-<dd>Build documentation.</dd></dl>
+<dt id="github.tools.task.gh_pages_build">
+<tt class="descclassname">github.tools.task.</tt><tt class="descname">gh_pages_build</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#github.tools.task.gh_pages_build" title="Permalink to this definition">¶</a></dt>
+<dd>Build your documentation with sphinx.</dd></dl>
 
 </div>
 </div>
@@ -162,7 +181,7 @@ pull any changes and remove any file</p>
         <li class="right" >
           <a href="template.html" title="PasteScript template"
              >previous</a> |</li>
-        <li><a href="index.html">github-tools v0.1.0a3 documentation</a> &raquo;</li> 
+        <li><a href="index.html">github-tools v0.1.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

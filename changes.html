@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sphinx extension &mdash; github-tools v0.1.1 documentation</title>
+    <title>Changes &mdash; github-tools v0.1.1 documentation</title>
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -20,8 +20,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
     <link rel="top" title="github-tools v0.1.1 documentation" href="index.html" />
-    <link rel="next" title="Changes" href="changes.html" />
-    <link rel="prev" title="Paver Task" href="task.html" /> 
+    <link rel="prev" title="Sphinx extension" href="sphinx.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,10 +33,7 @@
           <a href="modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="changes.html" title="Changes"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="task.html" title="Paver Task"
+          <a href="sphinx.html" title="Sphinx extension"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">github-tools v0.1.1 documentation</a> &raquo;</li> 
       </ul>
@@ -48,40 +44,21 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="module-github.tools.sphinx">
-<h1>Sphinx extension<a class="headerlink" href="#module-github.tools.sphinx" title="Permalink to this headline">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">Sphinx extension to remove leading under-scores from directories names in the html build output directory.</td>
-</tr>
-</tbody>
-</table>
-<dl class="function">
-<dt id="github.tools.sphinx.change_pathto">
-<tt class="descclassname">github.tools.sphinx.</tt><tt class="descname">change_pathto</tt><big>(</big><em>app</em>, <em>pagename</em>, <em>templatename</em>, <em>context</em>, <em>doctree</em><big>)</big><a class="headerlink" href="#github.tools.sphinx.change_pathto" title="Permalink to this definition">¶</a></dt>
-<dd>Replace pathto helper to change paths to folders with a leading underscore.</dd></dl>
-
-<dl class="function">
-<dt id="github.tools.sphinx.move_private_folders">
-<tt class="descclassname">github.tools.sphinx.</tt><tt class="descname">move_private_folders</tt><big>(</big><em>app</em>, <em>e</em><big>)</big><a class="headerlink" href="#github.tools.sphinx.move_private_folders" title="Permalink to this definition">¶</a></dt>
-<dd><p>remove leading underscore from folders in in the output folder.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Todo:</th><td class="field-body">should only affect html built</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="github.tools.sphinx.setup">
-<tt class="descclassname">github.tools.sphinx.</tt><tt class="descname">setup</tt><big>(</big><em>app</em><big>)</big><a class="headerlink" href="#github.tools.sphinx.setup" title="Permalink to this definition">¶</a></dt>
-<dd>Add a html-page-context  and a build-finished event handlers</dd></dl>
-
+  <div class="section" id="changes">
+<h1>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="jun-14-2009">
+<h2>0.1.1 (Jun 14, 2009)<a class="headerlink" href="#jun-14-2009" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed a bug in in the <tt class="docutils literal"><span class="pre">doc/source/conf.py</span></tt> created with github-tools&#8217; paste
+template.</li>
+</ul>
+</div>
+<div class="section" id="jun-12-2009">
+<h2>0.1.0 (Jun 12, 2009):<a class="headerlink" href="#jun-12-2009" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Initial release.</li>
+</ul>
+</div>
 </div>
 
 
@@ -90,15 +67,21 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Changes</a><ul>
+<li><a class="reference external" href="#jun-14-2009">0.1.1 (Jun 14, 2009)</a></li>
+<li><a class="reference external" href="#jun-12-2009">0.1.0 (Jun 12, 2009):</a></li>
+</ul>
+</li>
+</ul>
+
             <h4>Previous topic</h4>
-            <p class="topless"><a href="task.html"
-                                  title="previous chapter">Paver Task</a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="changes.html"
-                                  title="next chapter">Changes</a></p>
+            <p class="topless"><a href="sphinx.html"
+                                  title="previous chapter">Sphinx extension</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="sources/sphinx.txt"
+              <li><a href="sources/changes.txt"
                      rel="nofollow">Show Source</a></li>
             </ul>
           <div id="searchbox" style="display: none">
@@ -128,10 +111,7 @@
           <a href="modindex.html" title="Global Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="changes.html" title="Changes"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="task.html" title="Paver Task"
+          <a href="sphinx.html" title="Sphinx extension"
              >previous</a> |</li>
         <li><a href="index.html">github-tools v0.1.1 documentation</a> &raquo;</li> 
       </ul>
