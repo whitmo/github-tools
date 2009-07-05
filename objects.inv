@@ -26,11 +26,11 @@ github.tools.gh_pages.ProjectUrl.gh_pages attribute gh-pages.html
 github.tools.task.gh_pages_create function task.html
 github.tools.gh_pages.Credentials.get_credentials classmethod gh-pages.html
 github.tools.gh_pages.ProjectUrl.http attribute gh-pages.html
-github.tools.gh_pages.GitHubProject.get_project classmethod gh-pages.html
+github.tools.gh_pages.GitHubProject class gh-pages.html
 github.tools.sphinx.move_private_folders function sphinx.html
 github.tools.sphinx.setup function sphinx.html
 github.tools.gh_pages.GitHubProject.create classmethod gh-pages.html
 github.tools.task.gh_pages_clean function task.html
 github.tools.gh_pages.Submodule class gh-pages.html
-github.tools.gh_pages.GitHubProject class gh-pages.html
+github.tools.gh_pages.GitHubProject.get_project classmethod gh-pages.html
 github.tools.task.gh_register function task.html
