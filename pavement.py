@@ -45,7 +45,8 @@ install_requires = [
     'Cheetah',
     'virtualenv',
     'GitPython',
-    'pkginfo'
+    'pkginfo',
+    'setuptools_git'
     ]
 
 try:
@@ -58,6 +59,7 @@ entry_points="""
     # -*- Entry points: -*-
     [paste.paster_create_template]
     gh_package = github.tools.template:GithubTemplate
+    alt_gh_pkg = github.tools.template:AltGithubTemplate
     """
 
 setup(name='github-tools',
@@ -70,8 +72,7 @@ setup(name='github-tools',
     author_email='dinoboff@hotmail.com',
     url='http://dinoboff.github.com/github-tools/',
     license='BSD',
-    packages = find_packages('src'),
-    package_dir = {'': 'src'},
+    packages = find_packages(),
     namespace_packages=['github'],
     include_package_data=True,
     test_suite='nose.collector',

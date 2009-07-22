@@ -201,3 +201,10 @@ class GithubTemplate(Template):
                 vars['licence'] = 'GPL'
                 licence_tmpl = GPL
             vars['licence_body'] = (LICENCE_HEADER + licence_tmpl) % vars
+
+
+class AltGithubTemplate(GithubTemplate):
+    """
+    An alternate spelling for paver enabled github project
+    """
+    _template_dir = 'tmpl/gh_alt'
