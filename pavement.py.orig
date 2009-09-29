@@ -53,10 +53,22 @@ classifiers = [
     ]
 
 install_requires = [
+<<<<<<< HEAD:pavement.py
+    'setuptools',
+    'Sphinx',
+    'Paver',
+    'PasteScript',
+    'Cheetah',
+    'virtualenv',
+    'GitPython',
+    'pkginfo',
+    'setuptools_git'
+=======
     'setuptools>=0.6c9',
     'paver-templates>=0.1.0b3',
     'GitPython>=0.1.6',
     'simplejson',
+>>>>>>> 055e5379ad96cac9165b39d7202c38dfc69740e4:pavement.py
     ]
 
 entry_points="""
@@ -76,8 +88,12 @@ setup(name='github-tools',
     author_email='dinoboff@hotmail.com',
     url='http://dinoboff.github.com/github-tools/',
     license='BSD',
+<<<<<<< HEAD:pavement.py
+    packages = find_packages(),
+=======
     packages = ['github', 'github.tools',],
     package_dir = {'': 'src'},
+>>>>>>> 055e5379ad96cac9165b39d7202c38dfc69740e4:pavement.py
     namespace_packages=['github'],
     include_package_data=True,
     test_suite='nose.collector',
@@ -161,7 +177,11 @@ if ALL_TASKS_LOADED:
     @needs('sdist', 'tag', 'setuptools.command.upload',)
     def upload():
         """Upload the distribution to pypi, the new tag and the doc to Github"""
+<<<<<<< HEAD:pavement.py
+        Git('.').push('origin', 'master', tag_name)
+=======
         options.update(
             gh_pages_update=Bunch(commit_message='Update doc to %s' % version))
         gh_pages_update()
         Git('.').push('origin', 'master', tag_name)
+>>>>>>> 055e5379ad96cac9165b39d7202c38dfc69740e4:pavement.py

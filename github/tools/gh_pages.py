@@ -24,6 +24,9 @@ class Credentials(object):
         self.user = user
         self.token = token
         
+    def __len__(self):
+        return bool(self.user and self.token)
+        
     @classmethod
     def get_credentials(cls, repo=None):
         """
@@ -34,8 +37,8 @@ class Credentials(object):
         else:
             _git = Git(os.getcwd())
         return cls(
-            user=_git.config('github.user'),
-            token=_git.config('github.token')
+            user=_git.config('github.user', with_exceptions=False),
+            token=_git.config('github.token', with_exceptions=False)
             )
 
 
@@ -102,7 +105,8 @@ class ProjectUrl(object):
         ssh='git@github.com:%s/%s.git',
         git='git://github.com/%s/%s.git',
         http='http://github.com/%s/%s',
-        gh_pages='http://%s.github.com/%s'
+        gh_pages='http://%s.github.com/%s',
+        issue='http://github.com/%s/%s/issues'
         )
     
     def __init__(self, project):
@@ -124,6 +128,11 @@ class ProjectUrl(object):
         return self._url('http')
     
     @property
+    def issue(self):
+        """Url to issue tracker"""
+        return self._url('issue')
+    
+    @property
     def gh_pages(self):
         """Url for the project's gh-pages."""
         return self._url('gh_pages')
@@ -132,9 +141,10 @@ class ProjectUrl(object):
         if self.project.name is None:
             raise AttributeError('Project name not defined')
         if self.project.owner is None:
-            self.project.owner = Credentials.get_credentials(self.repo).user
+            self.project.owner = Credentials.get_credentials().user
         if not self.project.owner:
-            raise AttributeError('The project owner or the github user need to be set.')
+            raise AttributeError(
+                'The project owner or the github user need to be set.')
         return self._tmpls[protocol] % (self.project.owner, self.project.name)
         
     def __str__(self):
